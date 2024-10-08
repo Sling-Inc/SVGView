@@ -58,7 +58,6 @@ struct SVGTextView: View {
            .alignmentGuide(VerticalAlignment.top) { d in d[VerticalAlignment.firstTextBaseline] }
            .apply(paint: fill)
            .transformEffect(model.transform)
-           .frame(alignment: .topLeading)
            .frame(width: model.font?.size ?? 0)
            .offset(y: model.font?.size ?? 0)
     }
