@@ -56,9 +56,10 @@ struct SVGTextView: View {
            .lineLimit(1)
            .alignmentGuide(.leading) { d in d[model.textAnchor] }
            .alignmentGuide(VerticalAlignment.top) { d in d[VerticalAlignment.firstTextBaseline] }
-           .position(x: 0, y: 0) // just to specify that positioning is global, actual coords are in transform
            .apply(paint: fill)
            .transformEffect(model.transform)
            .frame(alignment: .topLeading)
+           .frame(width: model.font?.size ?? 0)
+           .offset(y: model.font?.size ?? 0)
     }
 }
